@@ -21,7 +21,7 @@ const Home = ({changeContaint}) => {
       setImagesArr(data)
       setDataload(false)
     } catch (err) {
-      console.log("erros is: ", err)
+      alert("Connection Faild")
     }
   }
 

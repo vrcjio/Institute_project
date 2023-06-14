@@ -13,7 +13,7 @@ const LetestNewsFeed = () => {
             setNewsArr(result.products)
             setLoad(false)
         } catch (err) {
-            console.log("err")
+            alert("News Field Connection Feild")
         }
     }
     useEffect(() => {
