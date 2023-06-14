@@ -9,7 +9,7 @@ export const Web_main = dynamic(()=>import('../../Components/Home'),{
     loading:()=><h1>Data is loading...</h1>
 })
 
-export const EnquiryModel = dynamic(()=>import("../../Components/EnquiryModel"),
+export const EnquiryModel = dynamic(()=>import("../../Components/FormModel"),
 {ssr:true}
 )
 

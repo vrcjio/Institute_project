@@ -49,7 +49,7 @@ const Home = ({changeContaint}) => {
               imagesArr.map(item => (
                 <Carousel.Item key={item.id}>
                   <img
-                    style={{ objectFit: "contain", display: "block", width: "100%", marginLeft: "auto", marginRight: "auto" }}
+                    style={{ objectFit: "contain", display: "block", width: "300px", height:"312px", marginLeft: "auto", marginRight: "auto" }}
                     src={item.thumbnail}
                     alt={item.thumbnail}
                   />

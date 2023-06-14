@@ -15,7 +15,7 @@ function LoginForm({setShow}) {
             ...user,
             [e.target.name]:objvalue,
         })
-        if(user.fullname.length>3 && user.contact.length === 10){
+        if(user.fullname.length>3 && user.contact.length >= 8){
             alert("thank You For Submition")
         }
         
