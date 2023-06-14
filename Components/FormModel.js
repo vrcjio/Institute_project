@@ -26,7 +26,7 @@ function EnquiryForm({ modelView , setChangeContaint}) {
         </Modal.Header>
         <Modal.Body>
             {(modelView === "Enquiry") && <PermanentEnquiryForm setShow={setShow} />}
-            {(modelView === "Login") && <LoginForm setShow={setShow} />}
+            {(modelView === "Login") && <LoginForm setShow={setShow} setChangeContaint={setChangeContaint} />}
 
         </Modal.Body>
         <Modal.Footer>

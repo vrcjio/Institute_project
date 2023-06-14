@@ -1,3 +1,4 @@
+"use client"
 import { Col, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -5,11 +6,11 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function NavScrollExample({setChangeContaint}) {
+function NavScrollExample({ setChangeContaint }) {
     return (
         <Navbar xs={12} sm={12} md={12} bg="primary" variant='dark' expand="lg" className='sticky-top w-100'>
             <Container fluid>
-                <Navbar.Brand onClick={() => setChangeContaint("Main")} style={{cursor:"alias"}}>MyDemoFile</Navbar.Brand>
+                <Navbar.Brand onClick={() => setChangeContaint("Main")} style={{ cursor: "alias" }}>MyDemoFile</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav activeKey=".active"
@@ -17,13 +18,23 @@ function NavScrollExample({setChangeContaint}) {
                         style={{ maxHeight: '100px', color: "white" }}
                         navbarScroll
                     >
-                        <Nav.Link  onClick={() => setChangeContaint("Main")}>Home</Nav.Link>
+                        <Nav.Link onClick={() => setChangeContaint("Main")}>Home</Nav.Link>
 
-                        <Nav.Link onClick={() => setChangeContaint("Login")}>Login</Nav.Link>
-
-                        <Nav.Link  onClick={()=>setChangeContaint("Contact")}>
+                        <Nav.Link onClick={() => setChangeContaint("Contact")}>
                             Contact
                         </Nav.Link>
+                        {
+                            sessionStorage.getItem("adminToken") &&
+                            <Nav.Link onClick={() => setChangeContaint("AdminProfile")}>
+                                AdminProfile
+                            </Nav.Link>
+                        }
+                        
+                        {
+                            sessionStorage.getItem("adminToken") ?
+                                <Nav.Link onClick={() => {sessionStorage.removeItem("adminToken"); setChangeContaint("Main")}}><font color="yellow">Logout</font></Nav.Link>:
+                        <Nav.Link onClick={() => setChangeContaint("Login")}>Login</Nav.Link>
+                        }
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control

@@ -38,7 +38,7 @@ const Home = ({changeContaint}) => {
           <h3>
             <Badge bg="success">Momorized Shorts</Badge>
           </h3>
-          <Carousel className="shadow p-3 mb-5 bg-white rounded">
+          <Carousel className="shadow p-3 mb-5 bg-white rounded" variant='dark'>
             {dataload ? <>
               <Placeholder as="Carousel.Item" animation="glow">
                 <Placeholder xs={12} style={{ height: "10rem" }} />

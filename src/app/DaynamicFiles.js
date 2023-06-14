@@ -19,3 +19,8 @@ export const Web_Login = dynamic(()=>import('../../Components/LoginFrom'),{
     ssr:false,
     loading:()=><h1>Form Is Loading.... please wait</h1>
 })
+
+export const Web_AdminProfile = dynamic(()=>import('../../Components/Admin/Profile'),{
+    ssr:false,
+    loading:()=><h1>Wait a loading...</h1>
+})

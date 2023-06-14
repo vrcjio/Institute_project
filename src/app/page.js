@@ -2,7 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { useEffect, useState } from 'react'
-import { EnquiryModel, Web_Footer, Web_Header, Web_Login, Web_main } from './DaynamicFiles';
+import { EnquiryModel, Web_AdminProfile, Web_Footer, Web_Header, Web_Login, Web_main } from './DaynamicFiles';
 
 
 
@@ -29,7 +29,13 @@ const page = () => {
             }
             <Web_main />
           </>
+          
         }
+
+{
+              (changeContaint === "AdminProfile") &&
+              <Web_AdminProfile setChangeContaint={setChangeContaint} />
+            }
       </>
 
       <Web_Footer />
