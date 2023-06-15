@@ -17,7 +17,7 @@ function LoginForm({setShow,setChangeContaint}) {
         
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Gmail</Form.Label>
-        <Form.Control  type="text" name="fullname" placeholder="Enter Gmail" required/>
+        <Form.Control  type="text" name="fullname" placeholder="Enter Gmail" autoFocus required/>
         <Form.Text className="text-muted">
           Enter Valid Email
         </Form.Text>

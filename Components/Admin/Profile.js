@@ -1,8 +1,13 @@
 "use client"
+import { CandidantList } from "@/app/DaynamicFiles";
+import { useEffect, useState } from "react"
 import { Container, Row, Col, Badge , Nav} from "react-bootstrap"
 
 const Profile = () => {
-
+    const [tabBar, setTabBar] = useState();
+    useEffect(()=>{
+        setTabBar("Activity")
+    },[])
     if (sessionStorage.getItem("adminToken")) {
         return (
             <>
@@ -22,12 +27,29 @@ const Profile = () => {
                             </div>
                         </Col>
                         <Col xs={11} sm={7} md={7} className="shadow-lg m-3 p-1 bg-white card">
-                            <Nav justify variant="tabs" defaultActiveKey="#home">
-                                    <Nav.Link href="#home">Active</Nav.Link>
-                                    <Nav.Link eventKey="#link-1"> NavLink</Nav.Link>
-                                    <Nav.Link eventKey="#link-2">Link</Nav.Link>
+                            <Nav justify variant="tabs" defaultActiveKey="#Activity">
+                                    <Nav.Link onClick={()=>setTabBar("Activity")} eventKey="Activity">Activity</Nav.Link>
+                                    <Nav.Link onClick={()=>setTabBar("EnquiryList")} eventKey="EnquiryList">Enquiry List</Nav.Link>
+                                    <Nav.Link onClick={()=>setTabBar("More")} eventKey="More">More Activity</Nav.Link>
                             </Nav>
-                            containt
+                            {
+                                (tabBar === "Activity")&&
+                                <>
+                                    Activity Controller
+                                </>
+                            }
+                            {
+                                (tabBar === "EnquiryList")&&
+                                <>
+                                   <CandidantList />
+                                </>
+                            }
+                            {
+                                (tabBar === "More")&&
+                                <>
+                                    More Controller
+                                </>
+                            }
                         </Col>
                     </Row>
                 </Container>

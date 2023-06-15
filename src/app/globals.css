@@ -17,6 +17,14 @@
   background-color: rgb(248, 190, 0);
   width:100%;
 }
+
+.customSticky{
+  background-color: red !important;
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0;
+
+}
 /* ----------------------------*/
 
 

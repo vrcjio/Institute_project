@@ -12,6 +12,7 @@ import LetestNewsFeed from './LetestNewsFeed';
 const Home = ({changeContaint}) => {
   const [imagesArr, setImagesArr] = useState([]);
   const [dataload, setDataload] = useState(true)
+  
   const getImages = async () => {
     try {
       let res = await fetch('https://dummyjson.com/products')
@@ -60,6 +61,7 @@ const Home = ({changeContaint}) => {
                 </Carousel.Item>
               ))}
           </Carousel>
+          
         </Col>
 
         <Col md={4} xs={12} sm={4} className="mb-2">

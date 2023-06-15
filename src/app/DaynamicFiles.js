@@ -24,3 +24,7 @@ export const Web_AdminProfile = dynamic(()=>import('../../Components/Admin/Profi
     ssr:false,
     loading:()=><h1>Wait a loading...</h1>
 })
+
+export const CandidantList = dynamic(()=>import('../../Components/Admin/EnquiryList'),{
+    ssr:false
+})
